@@ -1,0 +1,22 @@
+
+@media screen and (max-width: 1000px) {
+
+.card_img{
+        width: 100%;
+}
+.container{
+        padding: 5%;
+}
+
+.logo{
+    width: 30%;
+}
+
+.big_text{
+    font-size: 30px;
+    font-weight: 400;
+}
+.small_text{
+    font-size: 18px;
+}
+  }

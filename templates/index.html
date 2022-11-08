@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- main -->
+
+
+{% block content %}
+<div class="container">
+
+    <div class="big_text mt-3 card_img text-primary">
+        Python nima ?
+    </div>
+    <div class="small_text mt-3 card_img">
+        Python ommabop dasturlash tili. Uni 1991-yil Guido van Rossum ishlab chiqgan. <br>
+        Python quyidagi sohalarda ko'p ishlatiladi: <br>
+        -web dasturlash (serverlar bilan);<br>
+        -dasturiy ta'minot;<br>
+        -matematika;<br>
+        -tizim scriptlari
+    </div>
+
+    <div class="big_text mt-3 card_img text-primary">
+        Nega Python ?
+    </div>
+    <div class="small_text mt-3 card_img">
+        Python turli platmorfalarda ishlaydi (Windows, Mac, Linux, Raspberry Pi va boshqalar); <br>
+        -Python sodda sintaksisga ega;<br>
+        -Sodda sintaksis tufayli boshqa dasturlash tillariga nisbatan dasturlashda kamroq kod ishlatiladi;
+<br>        -Pythonning amallarini bajarish tezligi yuqori;
+    </div>
+
+    <div class="big_text mt-4 card_img text-primary">
+        Saytimizda!
+    </div>
+    <div class="small_text mt-3 card_img">
+        Python dasturlash tilini 0 dan 3 qismga bo'lib o'rganamiz. Saytimiz orqali malumot turlari, satrlar, mantiq elementlari, operatorlar, list, tuple, dictionary, for, funksiya,obyektlar, datetime, fayllar bilan ishlashni o'rganasiz. Albatta saytimiz barchaga maqul keladi degan umiddaman &#128521;
+    </div>
+
+<div class="big_text mt-3 card_img text-primary">
+    Python darslari
+</div>
+
+<div class="row mt-5 card_img">
+  {% for x in categories %}
+    <div class="col-sm-12 col-md-12 col-lg-4">
+
+        <div class="card p-3 mb-3 shadow">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{% static 'img/pycoder.png' %}" class="img-fluid mt-5 card_img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title dark"><b>{{x.name}}</b></h5>
+                  <p class="card-text">
+                  {{x.body | safe}}
+                  </p>
+                  <p class="card-text">
+              <a href="{% url 'main:category_post' x.slug %}" class="btn btn-outline-dark" type="submit">Davom etish...</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    {% endfor %}
+
+    
+
+</div>
+
+{% endblock content %}
